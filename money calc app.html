@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    #container{
+        background-color: #ddd;
+        justify-content: center;
+        text-align: center;
+        margin-top: 10%;
+        width: 580px;
+        margin-left: 30%;
+        height:250px;
+        display: block;
+        
+    }
+    #form{
+       font-size: larger;
+        
+    }
+    input{
+        padding: 5px;
+    }
+    #total-btn{
+        background-color: lightskyblue;
+        border: none;
+        margin-top: 30px;
+        border-radius: 2px;
+        padding: 10px 10px;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Money calculate app</h1>
+        <div id="form">
+        <label for="ten">Enter no.of 10₹:</label><input type="text" id="ten"><br>
+        <label for="twenty">Enter no.of 20₹:</label><input type="number" id="twenty"><br>
+        <label for="hundred">Enter no.of 100₹:</label><input type="number" id="hundred"><br>
+        <label for="fivehundreds">Enter no.of 500₹:</label>
+        <input type="number" id="fivehundreds"><br>
+        <button id="total-btn" onclick="calctotal()">Total</button>
+        <button id="total-btn" onclick="
+        ten.value=''
+        twenty.value=''
+        hundred.value=''
+        fivehundreds.value=''
+        h.innerHTML=`Total amount:${0}`
+        ">clear</button>
+        <h2 id="h">Total amount:0</h2>
+        </div>
+    </div>
+    <script>
+       //take no.of 10₹.
+       //no.of 20 and no of 50 and 100 500
+       //with total button calculate total
+       let ten=document.getElementById('ten')
+       let twenty=document.getElementById('twenty')
+       let hundred=document.getElementById('hundred')
+       let fivehundreds=document.getElementById('fivehundreds')
+        function calctotal(){
+            let totaltens=ten.value*10;
+            let totaltwenty=twenty.value*20;
+            let totalhundreds=hundred.value*100;
+            let totalfivehundreds=fivehundreds.value*500;
+            var total_amount=totaltens+totaltwenty+totalhundreds+totalfivehundreds;
+            let h=document.getElementById('h').innerHTML=`Total amount:${total_amount}`
+            
+        }
+        
+    </script>
+</body>
+</html>

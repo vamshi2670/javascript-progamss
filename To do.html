@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <style>
+
+            body{
+               background-color:silver;
+               margin: 0px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               height: 100vh;
+               text-align: center;
+            }
+            .container{
+               background-color:burlywood;
+               border-radius: 4px;
+                box-shadow: 0,0,10px;
+
+            }
+            input[type="text"]{
+                padding: 10px;
+                text-align: center;
+                display:block;
+            }
+            #btn{
+                background-color: aqua;
+                
+                color: white;
+                width: 80px;
+                height: 39px;
+                cursor: pointer;
+                border: 10px;
+                justify-content: center;
+                align-items: center;
+                margin-left: 10px;
+            }
+            #btn:hover{
+                background-color: yellow;
+            }ul{
+                text-decoration: none;
+                list-style: none;
+            }   
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h1>TODO app</h1>
+        <input type="text" id="input" placeholder="Enter items">
+        <button id="btn" onclick="fclick()">Add TODO</button>
+        <ul id="ullist"></ul>
+        </div>
+        <script async src="Todo.js"></script>
+    </body>
+</html>

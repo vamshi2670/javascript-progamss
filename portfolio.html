@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            padding: 0px;
+            box-sizing: border-box;
+            margin: 0px;
+            background-color: #ffff;
+            font-family: 'Times New Roman', Times, serif;
+
+        }
+
+        #intro {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            line-height: 0;
+            align-items: start;
+            margin-left: 15%;
+            margin-top: 10%;
+            font-size: 24px;
+        }
+
+        #home_name {
+            margin-left: 150px;
+            font-size: large;
+            font-family: initial;
+        }
+
+        #intro_name {
+            color: blue;
+        }
+
+        .contact-btn ,.sub{
+            background-color: rgb(14, 153, 208);
+            padding: 6px 35px;
+            border: none;
+            border-radius: 3px;
+            margin-top: 30px;
+            font-size: large;
+            cursor: pointer;
+        }
+
+        .nav-bar {
+            list-style: none;
+            display: flex;
+            column-gap: 50px;
+            float: right;
+            margin-right: 150px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: larger;
+        }
+
+        nav a:hover {
+            color: cadetblue;
+            text-decoration: underline;
+            text-decoration-color: slateblue;
+            cursor: pointer;
+        }
+
+        #home {
+            padding-top: 10px;
+        }
+
+        #dow-name {
+            display: flex;
+            justify-content: center;
+            margin-top: 180px;
+        }
+        .about-heading{
+            display: flex;
+            justify-content: center;
+            background-color: darkolivegreen;
+            padding: 30px;
+        }
+        .para{
+            display: inline-block;
+            margin-left: 50px;
+            font-size: large;
+        }
+        .para-1 {
+            display: block;
+            margin-left: 50px;
+            font-size: large;
+        }
+        #hobbies ,.tech-skills,.soft-skills,.other-skills{
+            color: darkcyan;
+            font-size: large;
+            padding-left: 30px;
+        }
+        .hobbies ,.tech-list,.soft-list,.other-list {
+            margin-left: 40px;
+            list-style-type:disc;
+            line-height: 25px;
+        }
+        .skills-heading ,.contact-heading{
+            font-size: 29px;
+            background-color: greenyellow;
+            display: flex;
+            justify-content: center;
+            padding: 30px;
+        }
+        .tech-skills{
+            color: darksalmon;
+        }
+        .other-skills{
+            color: forestgreen;
+        }
+        .soft-skills{
+            color: hotpink;
+        }
+        .contact-heading{
+            background-color:mediumpurple;
+        }
+        .contact-form{
+            margin-top: 40px;
+            display: inline-block;
+            margin-left: 35%;
+            line-height: 40px;
+            padding: 33px;
+            background-color: aliceblue;
+        }
+        textarea{
+            margin-top: 20px;
+            height: 40px;
+            width: 250px;
+           
+        }
+        .contact-h1{
+            color:gray;
+            display: flex;
+            justify-content: center;
+
+        }
+        .sub{
+            background-color: rgb(213, 9, 114);
+            margin-left: 100px;
+        }
+        input{
+           width: 270px;
+            
+        }
+        input:hover,textarea:hover{
+            background-color: darkgrey;
+        }
+        .contact-info{
+            display: flex;
+        }
+        .social-media{
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        img{
+            border-radius: 250px;
+            position: absolute;
+            right: 200px;
+            width: 350px;
+            height: 350px;
+            padding: 10px;
+}
+    </style>
+</head>
+
+<body >
+    <div class="container">
+        <section id="home">
+            <header>
+                <nav id="nav">
+                    <ul class="nav-bar">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact us</a></li>
+                    </ul>
+                </nav>
+                <p id="home_name">vamshi</p>
+                <div id="intro">
+                    <h1>Hi,</h1>
+                    <h1>i'am <span id="intro_name">Vamshi</span>,</h1>
+                    <h1>Web Designer</h1>
+                    <button class="contact-btn">contact</button>
+                    <img src="https://scontent.fhyd11-3.fna.fbcdn.net/v/t39.30808-6/239741331_1015185356000984_8795770798891240722_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_aid=0&_nc_ohc=2X05q7dGmeMQ7kNvgH2nXSu&_nc_ht=scontent.fhyd11-3.fna&oh=00_AYDHFsPDGJvn2zZj17eLeFDbRwwyxBXLmFj8jrOkttqXMw&oe=66E1DD20" alt="not found">
+                </div>
+               
+                <p id="dow-name">vamshi</p>
+                <div class="social-media1">
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+                    <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+                    <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+                </div>
+            </header>
+
+        </section>
+        <section id="about">
+            <h2 class="about-heading">About Me</h2>
+            <p class="para"> Hi! I'm <b>vamshi,</b> i'm belongs to khammam at teldarpalli village.<br>
+                 Iam a passionate web developer with a knack for creating dynamic and responsive websites. <br>
+                I have honed my skills in HTML, CSS, JavaScript, and various modern frameworks.</p>
+            
+                <p class="para">I graduated from Sr&bgnr collage with a degree in B.com where <br>
+                 I developed a strong foundation in software development and user experience . <br>
+                I led several projects that significantly improved the company's online presence and user engagement.
+            </p>
+
+            <p class="para-1">Apart from coding, I enjoy hiking, photography, and exploring new technologies. <br> 
+                 I'm always eager to learn and take on new challenges.</p>
+
+            <p class="para">If you're looking for a dedicated and skilled developer to bring your project to life,
+                 <br> feel free to <a href="#contact">contact me</a>. 
+                Let's create something amazing together!</p>
+            <h4 id="hobbies">Hobbies</h4>
+            <ul class="hobbies">
+                <li>learning new skills</li>
+                <li>travelling</li>
+            </ul>
+        </section>
+
+        <section id="skills">
+            <h2 class="skills-heading">skills</h2>
+            <h3 class="tech-skills">technical skills</h3>
+            <ul class="tech-list">
+                <li>Front-end Development: HTML, CSS, JavaScript, React, Angular</li>
+                <li>Back-end Development: python</li>
+                <li>Data base: Rdbms,dbms,My sql,</li>
+            </ul>
+            <h3 class="soft-skills">Soft Skills</h3>
+            <ul class="soft-list">
+                <li>Communication</li>
+                <li>Teamwork</li>
+                <li>Problem-solving</li>
+                <li>Time management</li>
+                <li>Leadership</li>
+            </ul>
+            <h3 class="other-skills">other skills</h3>
+            <ul class="other-list">
+                <li>Git&github</li>
+                <li>Testing&debuging</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h1 class="contact-heading">Contact Us</h1>
+          <b><p class="para">If you have any questions or just want to get in touch, feel free to contact me through the form below or
+                via email. I look forward to hearing from you!</p></b>
+                
+            <form class="contact-form">
+                <h1 class="contact-h1">contact form</h1>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required> <br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="message" id="message">Message:</label>
+                <textarea id="message" name="message" required></textarea><br>
+
+                <button type="submit" class="sub">Send</button>
+            </form>
+
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:vamshibathula5@gmail.com">vamshibathula5@gmail.com</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+916302297750">6302297750</a></p>
+
+            </div>
+        </section>
+
+
+    </div>
+    <script>
+        onsubmit = function () {
+            let name = document.getElementById("name").value
+            let email = document.getElementById('email').value
+            var text = document.getElementById('message').value
+            if (name && email && text) {
+                alert('thank you hired me')
+            }
+            else {
+                alert('please fill the blanks')
+            }
+        }
+
+    </script>
+    <footer>
+        <div class="social-media">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a> |
+            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+        </div>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

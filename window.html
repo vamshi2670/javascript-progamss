@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 200px;
+                justify-content: center;
+                align-items: center ;
+                top: 500px;
+                
+            }
+            button{
+                background-color: blue;
+                color: white;
+                width:150px;
+                height: 40px;
+            }
+        </style>   
+    </head>
+<!-- syntax = window.open("url","target","specification") -->
+    <body>
+        <button onclick="openwindow()">open window</button><br>
+        <button onclick="closewindow()">close window</button> <br>
+        <button onclick="movewindow()">move window</button>
+        <button onclick="movebywindow()">moveby window</button>
+        <button onclick="resizewindow()">resize window</button>
+        <script>
+            var refer;
+            function openwindow(){
+                
+                refer=window.open("To do.html","_blank","width=400px,height=400px,left=600px,top=300px")
+            }
+            function closewindow(){
+                refer.close()
+            }
+            function movewindow(){
+                refer.moveTo(800,300)
+            }
+            function movebywindow(){
+                refer.moveBy(800,200)
+            }
+            function resizewindow(){
+                refer.resizeTo(400,400)
+            }
+        </script>
+    </body>
+</html>

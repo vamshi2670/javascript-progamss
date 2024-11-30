@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+                  <!-- dom objects -->
+    <!-- access with id example:
+        it perform on only unique id not multiple 
+    <h4 id="change">i dont want to change</h4><br>
+    <button onclick="changed()">click</button>
+    <script>
+        function changed(){
+           onclick=document.getElementById("change").innerHTML="iam changed"
+        }
+</script>
+
+ another example
+<p id="first">pargraph</p>
+<script>
+    x=document.getElementById('first');
+    console.log(x);
+
+</script> -->
+
+<!-- this is class example
+    
+    <h4 class="first">this is heading1</h4>
+    <h4 class="first">this is heading2</h4>
+    <script>
+        let x=document.getElementsByClassName('first');
+        console.log(x);
+    </script> -->
+
+<!-- this is example of getElementsByTagName
+    it perform on specified tag
+    <div>
+        <h4>heading1</h4>
+        <h3>heading2</h3>
+        <h4>heading3</h4>
+        <h5>heading4</h5>
+    </div>
+    <script>
+        let x=document.getElementsByTagName("h4");
+        console.log(x);
+    </script> -->
+
+<!--is like getelementbyid perform on first id or class is unique
+     <div class="special">
+    <h4>heading1</h4>
+    <h3>heading2</h3>
+    <h4>heading3</h4>
+    <h5>heading4</h5>
+</div>
+<div class="special">
+    <h4>heading1</h4>
+    <h3>heading2</h3>
+    <h4>heading3</h4>
+    <h5>heading4</h5>
+</div>
+<script>
+    let x=document.querySelector(".special");
+    console.log(x);
+</script> -->
+
+
+<!-- is like getelementbyclass it perform same id or class names  
+<div id="special">
+    <h4>heading1</h4>
+    <h3>heading2</h3>
+    <h4>heading3</h4>
+    <h5>heading4</h5>
+</div>
+<div id="special">
+    <h4>heading1</h4>
+    <h3>heading2</h3>
+    <h4>heading3</h4>
+    <h5>heading4</h5>
+</div>
+<script>
+    let x=document.querySelectorAll("#special");
+    console.log(x);
+</script>-->
+
+        <!-- dom propertys  
+        body
+        anchors
+        liks
+        images
+        head
+        title-->
+
+        <!-- example of dom body property as like all 
+            <div id="special">
+            <h4>heading1</h4>
+            <h3>heading2</h3>
+            <h4>heading3</h4>
+            <h5>heading4</h5>
+        </div>
+        <script>
+            console.log(document.body)
+        </script> -->
+
+</body>
+</html>

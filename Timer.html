@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer
+    </title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        .container{
+            
+            background-color:springgreen;
+            max-width: 600px;
+            border-radius: 10px;
+            margin:30px 30px;
+            padding: 20px 60px;
+            align-items: center;
+            box-shadow: 0 0 14px black;
+        }
+        #timeshow{
+            position: relative;
+            background-color: darkgray;
+            padding: 20px 40px;
+            font-size: 50px;
+            border-radius: 5px;
+            box-shadow: 0 0 25px black;
+        }
+        #timeh2{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            color: rgb(56, 55, 36);
+            font-size: 40px;
+            padding-bottom: 10px;
+        }
+        .btn button{
+            padding: 10px 10px;
+            border-radius: 3px;
+            margin: 30px;
+            background-color: rgb(158, 13, 124);
+            border-color: darkorange;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 id="timeh2">Stopwatch</h2>
+        <div id="timeshow">
+            00:00:00:000
+        </div>
+        <div class="btn">
+            <button id="start">Start</button>
+            <button id="pause">Pause</button>
+            <button id="reset">Reset</button>
+        </div>
+    </div>
+    <script>
+       let houres=0,minutes=0,seconds=0,milliseconds=0;
+       var time;
+        let t=document.getElementById('timeshow');
+        document.getElementById('start').onclick=function(){
+            time=setInterval(updatetime,10);
+        }
+        function updatetime(){
+            milliseconds=milliseconds+10;
+            if(milliseconds==1000){
+                seconds+=1;
+                milliseconds=0;
+                if(seconds==60){
+                    minutes+=1;
+                    seconds=0;
+                    if(minutes==60){
+                        houres+=1;
+                        minutes=0;
+                    }
+                }
+            }
+            var h,m,s,ms;
+            if(houres<10){
+                h="0"+houres
+            }
+            else{
+                h=houres
+            }
+            if(minutes<10){
+                m="0"+minutes;
+            }
+            else{
+                m=minutes;
+            }
+            if(seconds<10){
+                s="0"+seconds
+            }
+            else{
+                s=seconds;
+            }
+            if(milliseconds<10){
+                ms="00"+milliseconds;
+            }
+            else{
+                ms=milliseconds
+            }
+            t.innerHTML=`${h}:${m}:${s}:${ms}`
+        }
+        document.getElementById('pause').onclick=function(){
+            clearInterval(time)
+        }
+        document.getElementById('reset').onclick=function(){
+            clearInterval(time);
+            milliseconds=0;
+            seconds=0;
+            minutes=0;
+            houres=0;
+            t.innerHTML= "00:00:00:000";
+        }
+    </script>
+</body>
+</html>

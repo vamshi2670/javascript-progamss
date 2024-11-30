@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <script>
+            function returnvalidate(){
+                var name=document.myform.name.value;
+                var password=document.myform.password.value;
+                if(name=null || name==""){
+                    alert("name could not be blank");
+                    return false;
+                }
+                else if(password.length<=6){
+                    alert('password must be more than 6 characters');
+                    return false;
+                };
+                
+            }
+        </script>
+        <form name="myform" method="post" onsubmit="returnvalidate()" action="w3.scholl">
+            name:<input type="text" name="name"><br>
+            password:<input type="password" name="password">
+            <input type="submit" value="register">
+        </form>
+    </body>
+</html>

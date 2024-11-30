@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function emailvalidate(){
+            var x=document.myform.email.value;
+            var atposition=x.Indexof('@');
+            var atdot=x.lastindexof('.');
+            if(atposition<1||atdot<atposition+2||atdot+2==x.length){
+                alert('please enter valid email')
+            }
+        }
+
+    </script>
+    <form name="email" method="post" action="#" onsubmit="emailvalidate()">
+        email:<input type="text" name="email">
+        password:<input type="password" >
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="getdata">Get data</button>
+    <div id="data"></div>
+    <script>
+        let result;
+        let btn=document.getElementById('getdata')
+        let data=document.getElementById('data')
+        btn.addEventListener('click',loaddata)
+        function loaddata(){
+            let xhr=new XMLHttpRequest()
+            xhr.open('GET','country.json',true)
+            xhr.send()
+            
+            xhr.onload=function(){
+                result=xhr.responseText
+                result=JSON.parse(result)
+                console.log(result)
+            }
+            let str=`<table border="2px"> <tr>`
+            for(key in result){
+               str=str+`<th>${key}</th>`
+            }
+            str=str+`</tr><tr>`
+                for(key in result){
+                    str=str+`<td>${result[key]}</td>`
+                }
+            str=str+`</tr></table>`
+            data.innerHTML=str; 
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container{
+            background-color:rgb(10, 208, 10);
+            padding: 10px 70px;
+            box-shadow: 0 0 15px black;
+            border-radius: 10px;
+        }
+        button{
+            background-color:rgb(16, 104, 211);
+            border-radius: 2px;
+            
+            padding: 5px;
+        }
+        #score{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz App</h1>
+        <div class="quizcontainer">
+            <p id="question">question is here?</p>
+
+        
+        <div id="option"></div>
+      
+            <button id="submitbtn" >submit answer</button>
+            <p id="feedback"></p>
+        </div>
+        <p id="score">score:0</p>
+    </div>
+    <script>
+        let quizcontainer=document.getElementsByClassName('quizcontainer')
+        let opquestions=document.getElementById('question');
+        let options=document.getElementById('option');
+        var submitbtn=document.getElementById('submitbtn');
+        let feedback=document.getElementById('feedback');
+        let score=document.getElementById('score');
+        
+        let scorecont=0;
+        let questionindex=0
+        const questiondis=[
+            {
+                question:"what is the capital of usa",
+                options:["uk","indonesia","newyork","paris"],
+                correct:"newyork"
+            },
+            {
+                question:"who is richest man in world ",
+                options:["Elon mask","warrenbeft","billgates","mukeshambani"],
+                correct:"Elon mask"
+            }
+        ]
+        function loadquestion(){
+            var currentqustion=questiondis[questionindex]
+            opquestions.textContent=currentqustion.question;
+            opquestions.innerHTML="";
+            currentqustion.options.forEach((Option,index)=>{
+                var opbtn=document.createElement('button')
+                opbtn.textContent=Option;
+                opbtn.onclick=function(){
+                    selectanswer(Option,currentqustion.correct)
+                }
+                opquestions.appendChild(opbtn)
+            }
+            
+        )}
+        function selectanswer(selectoption,correct){
+
+        }
+        loadquestion();
+    </script>
+</body>
+</html>

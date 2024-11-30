@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin:0 ;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body{
+                
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .container{
+                margin-left: 200px;
+                background-color:blueviolet;
+                text-align: center;
+                width: 40%;
+                padding: 60px;
+                border-radius:10px ;
+            }
+            #Timer{
+                background-color: darkslategray;
+                padding:60px;
+                padding-top: 60px;
+                font-size: 40px;
+                box-shadow: 0 0 30px black;
+                position: relative;
+            }
+            .buttons{
+                display:flex;
+                justify-content: space-around;
+                margin:top;
+                transform: translateX(-300%);
+                margin-top: 220px;
+                
+            }
+            .buttons button{
+                
+                padding: 10px;
+                margin: 60px 2px;
+                padding-left: 14px;
+                transform: translateX(190px);
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="container">
+            <div id="Timer">
+                00 : 00 : 00: 000
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="start">start</button>
+            <button id="pause">pause</button>
+            <button id="reset">reset</button>
+        </div>
+        <script>
+            let timshow=document.getElementById('Timer')
+            let hour=0,minute=0,second=0,millisecond=0;
+            var timeref;
+            document.getElementById('start').onclick=function(){
+                timeref=setInterval(updatetime,10);
+            }
+            function updatetime(){
+                millisecond=millisecond+10;
+                if(millisecond==1000){
+                    second=second+1;
+                    millisecond=0;
+                    if(second==60){
+                        minute=minute+1;
+                        second=0;
+                        if(minute==60){
+                            hour=hour+1;
+                            minute=0;
+                        }
+                    }
+                }
+            
+            var h,m,s,ms;
+            if(hour<10){
+                h="0"+hour
+            }
+            else{
+                h=hour;
+            }
+            if(minute<10){
+                m="0"+minute;
+            }
+            else{
+                m=minute;
+            }
+            if(second<10){
+                s="0"+second;
+            }else{
+                s=second;
+            }
+            if(millisecond<10){
+                ms="0"+millisecond
+            }
+            else if(millisecond<100){
+                ms="00",millisecond
+            }
+            else{
+                ms=millisecond
+            }
+        
+            timshow.innerHTML=`${h}:${m}:${s}:${ms}`
+        }
+            document.getElementById('pause').onclick=function(){
+                clearInterval(timeref)
+            }
+        
+            document.getElementById('reset').onclick=function(){
+                clearInterval(timeref)
+                millisecond=0;
+                second=0
+                minute=0
+                hour=0
+                timshow.innerHTML="00","00","00","000";
+            }
+    
+        </script>
+    </body>
+</html>

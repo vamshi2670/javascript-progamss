@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crud</title>
+    <link rel="stylesheet" href="crud.css">
+
+</head>
+<body>
+    <button class="start">start</button>
+    <button class="stop">stop</button>
+    <script>
+        var btn=document.querySelector('.start');
+        var btn2=document.querySelector('.stop');
+        btn.onclick=test;
+        function test(){
+            alert('clicked')
+        }
+        btn2.addEventListener('click',stop)
+        function stop(){
+            btn.onclick=null;
+        }
+    </script>
+</body>
+</html>

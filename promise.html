@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>promise</title>
+</head>
+<body>
+    <button id="getdata">request</button>
+    <div id="data"></div>
+    <script>
+      
+        let btn=document.getElementById('getdata')
+        let data=document.getElementById('data')
+        btn.addEventListener('click',loaddata)
+        function loaddata(){
+            let p= new Promise(function(resolve,reject){
+            let xhr=new XMLHttpRequest()
+            xhr.open('GET','file.text',true)
+            xhr.send()
+            xhr.onload=function(){
+                if(xhr.status=200){
+                    resolve(data.innerText=xhr.responseText)
+
+                }
+                else
+                    reject(data.innerText='file not found')
+            }
+            })
+            p.catch(function(data){
+                console.log(data)
+            })
+            p.then(function(errordata){
+                console.log(errordata)
+            })
+        }
+
+
+        // let p=new Promise(
+        //     function(sucess,error){
+        //         let datacame=true;
+        //         if(datacame){
+        //             sucess("promise done");
+        //         }else
+        //         error("promise not done");
+        //     }
+        // )
+        // console.log(p);
+        // p.then(function(data){
+        //     console.log(data);
+        // })
+        // p.catch(function(errordata){
+        //     console.log(errordata);
+        // })
+    </script>
+</body>
+</html>

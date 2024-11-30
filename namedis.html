@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: rgb(166, 187, 49);
+        }
+        #typing{
+            color: rgb(232, 6, 153);
+            font-size: 30px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="typing"></div>
+    <script>
+        let div=document.getElementById('typing')
+        let name=" Bathula Vamshi     ";
+        let i=0;
+        setInterval(()=>{
+            div.innerHTML=name.slice(0,i)
+            i++;
+            if(name.length==i){
+                 i=0;
+            }
+        },100)
+    </script>
+</body>
+</html>

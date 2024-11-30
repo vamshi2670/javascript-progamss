@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                margin: 45vh;
+
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                transition: background 5s;
+            }
+            .change{
+                border-radius: 5px;
+                color: white;
+                background-color: deeppink;
+                padding: 15px;
+                border :solid goldenrod 2px;
+            }
+            button:hover{
+                background-color: chartreuse;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- <button onclick="change()" class="change">Background change</button> -->
+        <h3>Background changer</h3>
+        <script>
+            //we can use two ways with button and without
+                function change(){
+                letters="1234567890abcdef"
+                color="#";
+                for(i=0;i<6;i++){
+                    var r=Math.floor(Math.random()*16)
+                    color=color+letters[r]
+                }
+                document.body.style.background=color;
+            }
+            setInterval(change,1500)
+        </script>
+    </body>
+</html>

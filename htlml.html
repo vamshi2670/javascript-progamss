@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            margin: 0;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        
+        .contain{
+            display: inline-block;
+            text-align: center;
+            justify-content: center;
+            margin-top: 150px;
+            background-color: darkturquoise;
+            width: 400px;
+            margin-left: 450px;
+            padding-bottom:50px ;
+        }
+        h4{
+            color:deeppink;
+            font-size: 25px; 
+        }
+        #timer{
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+        #stop-btn{
+            padding: 5px 10px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 2px;
+        }
+        #start-btn{
+            padding:5px 10px;
+            background-color: cadetblue;
+            border: none;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>  
+   <div class="container">
+
+        <div class="contain">
+            <h4>Promodoro Technique</h4>
+            <p id="shower">timer</p>
+            <div id="timer">00:00:000</div>
+            <button id="start-btn" onclick="alarm()">start</button>
+            <button id="stop-btn">stop</button>
+            <audio id="alarmsound" src="school-bell-199584.mp3" preload="auto"></audio>
+        </div>
+   </div>
+   <script>
+    var time;
+    let minutes=0,seconds=0,milliseconds=0
+        let t=document.getElementById('timer')   
+        const a=document.getElementById('alarmsound')
+        let start=document.getElementById('start-btn')
+        start.onclick=function(){
+            time=setInterval(updatetime,10)
+            function updatetime(){
+                milliseconds=milliseconds+10
+                if(milliseconds==1000){
+                    seconds+=1
+                    milliseconds=0
+                    if(seconds==60){
+                        minutes+=1
+                        seconds=0
+                    }
+                    if(minutes==1){
+                        a.play()
+                        alert('take break')
+                        clearInterval(time)
+                        milliseconds=0
+                        seconds=0
+                        minutes=0
+                        updatetime()
+                        if(m>1){
+                            alert('break complete')
+                        }
+                    }
+                }
+                var m,s,mi
+                if(m<10){
+                    m="0"+minutes
+                }
+                else{
+                    m=minutes
+                }
+                if(s<10){
+                    s="0"+seconds
+                }
+                else{
+                    s=seconds;
+                }
+                if(mi<10){
+                    mi="00"+milliseconds
+                }
+                else{
+                    mi=milliseconds;
+                }
+                t.innerHTML=`${m} : ${s} :${mi}`
+            }
+        }
+        document.getElementById('stop-btn').onclick=function(){
+            clearInterval(time)
+        }
+   </script>
+</body>
+</html>

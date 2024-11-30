@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            body{
+                background-color: indigo;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            input{
+                border-color: white;
+                margin-left: 40px;
+
+            }
+            label{
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <label for="">Background changer</label><br>
+            <input type="color" name="" id="bgchange">
+            
+        </div>
+        
+        <script>
+            var bg=document.getElementById('bgchange')
+            bg.oninput=function bgchange(){
+                document.body.style.backgroundColor=this.value;
+            }
+        </script>
+    </body>
+</html>

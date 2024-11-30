@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>file upload to back end</h1>
+    <div class="container">
+        <input type="file" id="img">
+        <button onclick="uploadfile()" class="btn">upload</button>
+    </div>
+    <script>
+        
+        function uploadfile(){
+            let avater=document.getElementById('img')
+            const file=avater.file[0]
+            if(file){
+                const formdata=new FormData();
+                formdata.append('avater',file)
+            }
+            fetch("http://localhost:5000",
+            {
+                method:'POST',
+                body:formdata
+            }
+        ).then((req)=>{
+            console.log(req)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        
+    </style>
+</head>
+<body>
+
+    <div>
+        <div id="speed-div">
+            <h2>Finding Speed:</h2>
+            <label for="Distance">Distance:</label><input type="number" placeholder="Enter Distance" id="Distance">
+            <label for="Time">Time:</label><input type="number" placeholder="Enter Time" id="Time">
+            <button id="s-btn" >Submit</button>
+            <h4 id="stext">Speed is:0 kmph</h4>
+        </div>
+            <div id="distance-div">
+                <h2>Finding Distance:</h2>
+                <label for="d-Speed">Speed:</label><input type="number" placeholder="Enter Speed" id="d-Speed">
+                <label for="d-Time">Time:</label><input type="number" placeholder="Enter Time" id="d-Time">
+                <button id="d-btn">Submit</button>
+                <h4 id="dtext">Distance is:0 km</h4>
+            </div>
+                <div id="time-div">
+                    <h2>Finding Time:</h2>
+                    <label for="t-Distance">Distance:</label><input type="number" placeholder="Enter Distance" id="t-Distance">
+                    <label for="t-Speed">Speed:</label><input type="number" placeholder="Enter Speed" id="t-Speed">
+                    <button id="t-btn">Submit</button>
+                    <h4 id="ttime">Time:0 min</h4>
+                </div>
+    </div>
+    <script>
+        let sd=document.getElementById('Distance')
+        let st=document.getElementById('Time')
+        let sbtn=document.getElementById('s-btn')
+        sbtn.onclick=function(){
+            let speed=sd.value/st.value;
+            let stext=document.getElementById('stext')
+            stext.innerHTML=`Speed is:${speed} kmph`
+        }
+        let ds=document.getElementById('d-Speed')
+        let dt=document.getElementById('d-Time')
+        let dbtn=document.getElementById('d-btn')
+        dbtn.onclick=function(){
+            let distance=ds.value*dt.value;
+            let dtext=document.getElementById('dtext')
+            dtext.innerHTML=`Distance is:${distance} km`
+        }
+        let td=document.getElementById('t-Distance')
+        let ts=document.getElementById('t-Speed')
+        let tbtn=document.getElementById('t-btn')
+        tbtn.onclick=function(){
+            let time=td.value/ts.value;
+            let ttext=document.getElementById('ttime')
+            ttext.innerHTML=`Time is:${time} min`
+        }
+    </script>
+</body>
+</html>
